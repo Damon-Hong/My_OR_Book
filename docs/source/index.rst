@@ -10,6 +10,7 @@ Welcome to Operations Research Documentation's documentation!
    :maxdepth: 2
    :caption: Table of Contents:
 
+   demo 
 
 
 Indices and tables
