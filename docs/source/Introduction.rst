@@ -34,4 +34,4 @@ This is math equation :math:`\sum_{n=1}^{N} x^{2} + y^{2} = 1`
 
 .. note:: 
 
-    This is a note
+    This is a note!
