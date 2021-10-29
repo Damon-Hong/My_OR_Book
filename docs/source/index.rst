@@ -7,8 +7,8 @@ Operations Research Documentation
 =============================================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Table of Contents:
+   :maxdepth: 3
+   :caption: Linear Algebra:
 
    demo 
 
