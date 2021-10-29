@@ -10,6 +10,7 @@ Scalars
 Vectors: geometry and algebra
 -----------------------------
 
+Go and check :ref:`IntroductionCode`  
 
-
+Check doc :doc:`Introduction`
 
