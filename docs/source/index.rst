@@ -10,7 +10,8 @@ Operations Research Documentation
    :maxdepth: 3
    :caption: Linear Algebra:
 
-   demo 
+   Introduction 
+   Vectors 
 
 
 Indices and tables
