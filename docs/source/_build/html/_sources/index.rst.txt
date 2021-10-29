@@ -8,8 +8,9 @@ Welcome to Operations Research Documentation's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Table of Contents:
 
+   demo 
 
 
 Indices and tables
