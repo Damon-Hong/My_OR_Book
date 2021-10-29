@@ -11,7 +11,8 @@ Operations Research Documentation
    :caption: Linear Algebra:
 
    Introduction 
-   Vectors 
+   Vectors
+   VectorMultiplication 
 
 
 Indices and tables
