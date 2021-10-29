@@ -14,7 +14,12 @@ Operations Research Documentation
    LinearAlgebra/Vectors
    LinearAlgebra/VectorMultiplication
 
+
+.. toctree::
+   :maxdepth: 3
    :caption: Operations Research
+
+   OperationsResearch/OptimizationAlgorithms 
 
 
 
