@@ -88,12 +88,13 @@ Conflicting job sets are :math:`\left\{\begin{matrix}
 \Omega_{4} & \{ 11,15 \}
 \end{matrix}\right.`  
 
-.. math:: 
 
-    X_{i,j} = \left\{\begin{matrix}
-    1 & \text{if job j is allocated to machine i }\\ 
-    0 & \text{otherwise}
-    \end{matrix}\right.
+Decision variable :math:`X_{i,j} = \left\{\begin{matrix}
+1 & \text{if job j is allocated to machine i}\\ 
+0 & \text{otherwise}
+\end{matrix}\right.`
+
+Decision variable :math:`w` is a trivial positive value. 
 
 
 .. code::

@@ -218,11 +218,11 @@ an optimal solution).</p>
 \Omega_{3} &amp; \{ 7,10 \}\\
 \Omega_{4} &amp; \{ 11,15 \}
 \end{matrix}\right.\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}X_{i,j} = \left\{\begin{matrix}
-1 &amp; \text{if job j is allocated to machine i }\\
+<p>Decision variable <span class="math notranslate nohighlight">\(X_{i,j} = \left\{\begin{matrix}
+1 &amp; \text{if job j is allocated to machine i}\\
 0 &amp; \text{otherwise}
-\end{matrix}\right.\end{split}\]</div>
+\end{matrix}\right.\)</span></p>
+<p>Decision variable <span class="math notranslate nohighlight">\(w\)</span> is a trivial positive value.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cp</span>
 
