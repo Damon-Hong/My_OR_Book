@@ -90,7 +90,7 @@ Conflicting job sets are :math:`\left\{\begin{matrix}
 
 
 Decision variable :math:`X_{i,j} = \left\{\begin{matrix}
-1 & \text{if job j is allocated to machine i}\\ 
+1 & \text{if job } j \text{ is allocated to machine } i\\ 
 0 & \text{otherwise}
 \end{matrix}\right.`
 
