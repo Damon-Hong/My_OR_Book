@@ -51,6 +51,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#gradient-descent-and-newton-s-method">Gradient Descent and Newton’s Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#machine-scheduling-problem">Machine Scheduling Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#facility-location-problem">Facility Location Problem</a></li>
 </ul>
 </li>
 </ul>
@@ -82,18 +83,19 @@
            <div itemprop="articleBody">
              
   <section id="optimization-algorithms">
-<h1><a class="toc-backref" href="#id1">Optimization Algorithms</a><a class="headerlink" href="#optimization-algorithms" title="Permalink to this headline"></a></h1>
+<h1><a class="toc-backref" href="#id4">Optimization Algorithms</a><a class="headerlink" href="#optimization-algorithms" title="Permalink to this headline"></a></h1>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#optimization-algorithms" id="id1">Optimization Algorithms</a></p>
+<li><p><a class="reference internal" href="#optimization-algorithms" id="id4">Optimization Algorithms</a></p>
 <ul>
-<li><p><a class="reference internal" href="#the-simplex-method" id="id2">The Simplex Method</a></p></li>
-<li><p><a class="reference internal" href="#the-branch-and-bound-algorithm" id="id3">The Branch and Bound Algorithm</a></p></li>
-<li><p><a class="reference internal" href="#gradient-descent-and-newton-s-method" id="id4">Gradient Descent and Newton’s Method</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id5">Examples</a></p>
+<li><p><a class="reference internal" href="#the-simplex-method" id="id5">The Simplex Method</a></p></li>
+<li><p><a class="reference internal" href="#the-branch-and-bound-algorithm" id="id6">The Branch and Bound Algorithm</a></p></li>
+<li><p><a class="reference internal" href="#gradient-descent-and-newton-s-method" id="id7">Gradient Descent and Newton’s Method</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id8">Examples</a></p>
 <ul>
-<li><p><a class="reference internal" href="#machine-scheduling-problem" id="id6">Machine Scheduling Problem</a></p></li>
+<li><p><a class="reference internal" href="#machine-scheduling-problem" id="id9">Machine Scheduling Problem</a></p></li>
+<li><p><a class="reference internal" href="#facility-location-problem" id="id10">Facility Location Problem</a></p></li>
 </ul>
 </li>
 </ul>
@@ -101,24 +103,25 @@
 </ul>
 </div>
 <section id="the-simplex-method">
-<h2><a class="toc-backref" href="#id2">The Simplex Method</a><a class="headerlink" href="#the-simplex-method" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id5">The Simplex Method</a><a class="headerlink" href="#the-simplex-method" title="Permalink to this headline"></a></h2>
 </section>
 <section id="the-branch-and-bound-algorithm">
-<h2><a class="toc-backref" href="#id3">The Branch and Bound Algorithm</a><a class="headerlink" href="#the-branch-and-bound-algorithm" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id6">The Branch and Bound Algorithm</a><a class="headerlink" href="#the-branch-and-bound-algorithm" title="Permalink to this headline"></a></h2>
 </section>
 <section id="gradient-descent-and-newton-s-method">
-<h2><a class="toc-backref" href="#id4">Gradient Descent and Newton’s Method</a><a class="headerlink" href="#gradient-descent-and-newton-s-method" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id7">Gradient Descent and Newton’s Method</a><a class="headerlink" href="#gradient-descent-and-newton-s-method" title="Permalink to this headline"></a></h2>
 </section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id5">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id8">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
 <section id="machine-scheduling-problem">
-<h3><a class="toc-backref" href="#id6">Machine Scheduling Problem</a><a class="headerlink" href="#machine-scheduling-problem" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id9">Machine Scheduling Problem</a><a class="headerlink" href="#machine-scheduling-problem" title="Permalink to this headline"></a></h3>
 <p>Fifteen jobs, each with its processing time, should be scheduled on three machines.
 If two jobs cannot be scheduled on the same machine, they are called conflicting jobs.
 Table 1 lists the job IDs, processing times, and sets of conflicting jobs.
 For example, we cannot schedule any pair of jobs out of jobs 2, 5, 8 on the same machine.
 Note that a job may have no conflicting jobs.</p>
-<table class="docutils align-default">
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Table 1: Data</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 14%" />
 <col style="width: 43%" />
@@ -247,6 +250,233 @@ an optimal solution).</p>
     <span class="n">constrs</span> <span class="o">+=</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span><span class="o">+</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">constrs</span> <span class="o">+=</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span><span class="o">+</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">constrs</span> <span class="o">+=</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="o">+</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">14</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constrs</span><span class="p">)</span>
+
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">GUROBI</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="facility-location-problem">
+<h3><a class="toc-backref" href="#id10">Facility Location Problem</a><a class="headerlink" href="#facility-location-problem" title="Permalink to this headline"></a></h3>
+<p>A city is divided into <span class="math notranslate nohighlight">\(n\)</span> districts. The time (in minutes) it takes an ambulance to travel from District <span class="math notranslate nohighlight">\(i\)</span> to
+District <span class="math notranslate nohighlight">\(j\)</span> is denoted as <span class="math notranslate nohighlight">\(d_{ij}\)</span>. The population of District <span class="math notranslate nohighlight">\(i\)</span> (in thousands) is <span class="math notranslate nohighlight">\(p_{i}\)</span>.
+An example is shown in Table 2 and Table 3.  The distances between districts are shown in Table 2, and the population
+information is shown in Table 3.  In this instance, we have <span class="math notranslate nohighlight">\(n = 8\)</span> districts. We may see that, e.g., it takes 5
+minutes to travel from District 2 to District 3, and there are 40,000 citizens.</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Table 2: distances</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>District</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>6</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>8</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>8</p></td>
+<td><p>6</p></td>
+<td><p>12</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>5</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>6</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>8</p></td>
+<td><p>8</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>9</p></td>
+<td><p>6</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>12</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>10</p></td>
+<td><p>9</p></td>
+<td><p>7</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">District Population</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>District</p></th>
+<th class="head"><p>Population</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>35</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>20</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>50</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>45</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>60</p></td>
+</tr>
+</tbody>
+</table>
+<p>The city has mm ambulances and wants to locate them to mm of the districts. For each district, the population-weighted
+firefighting time is defined as the product of the district population times the amount of time it takes for the closest
+ambulance to travel to it. The decision maker aims to locate the mm ambulances to minimize the maximum population-weighted
+firefighting time among all districts.</p>
+<p>As an example, suppose that <span class="math notranslate nohighlight">\(m = 2\)</span>, <span class="math notranslate nohighlight">\(n = 8\)</span>, <span class="math notranslate nohighlight">\(d_{i,j}\)</span> and <span class="math notranslate nohighlight">\(p_{i}\)</span> are provided in Table 2,
+and the two ambulances are located in District 1 and 8. We then know that for Districts 1, 2, and 3 the closest ambulance
+is in District 1 and for the remaining five districts the closet ambulance is in District 8. The firefighting time for the
+eight districts are thus 0, 3, 4, 4, 4, 2, 2, and 0 minutes, respectively. The population-weighted firefighting times may
+then be calculated as 0, 90, 140, 80, 60, 100, 90, and 0. The maximum among the eight districts is therefore 140.</p>
+<p>For this problem, formulate an integer program that can minimize the maximum population-weighted firefighting time among all
+districts. Then write a program to invoke a solver (e.g., write a Python program to invoke Gurobi Optimizer) to solve the
+above instance and find an optimal solution for each problem. Write down the minimized maximum population-weighted
+firefighting times among all districts of the two districts that ambulances should be located in (i.e., the objective value
+of an optimal solution).</p>
+<div class="math notranslate nohighlight">
+\[\min_{X_{i,j}, w} w\]</div>
+<p>subject to:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; \sum_{j \in \mathcal{N}} x_{j} = m \\
+&amp; Y_{i,j} \leq x_{j}, \forall i,j \in \mathcal{N} \\
+&amp; \sum_{j \in \mathcal{N}} Y_{i,j} = 1 , \forall i \in \mathcal{N} \\
+&amp; w \geq \sum_{j \in \mathcal{N}} d_{i,j} p_{i} Y_{i,j} , \forall i \in \mathcal{N} \\
+&amp; x_{i}, Y_{i,j} \in \{ 0,1 \}, \forall i,j \in \mathcal{N} \\
+&amp; w \geq 0\end{split}\]</div>
+<p>where Decision variable <span class="math notranslate nohighlight">\(Y_{i,j} = \left\{\begin{matrix}
+1 &amp; \text{if for District } i \text{ the cloest ambulance is located in District } j\\
+0 &amp; \text{otherwise}
+\end{matrix}\right.\)</span></p>
+<p>Decision variable <span class="math notranslate nohighlight">\(x_{j} = \left\{\begin{matrix}
+1 &amp; \text{if an ambulance is located in District } j\\
+0 &amp; \text{otherwise}
+\end{matrix}\right.\)</span></p>
+<p>Decision variable <span class="math notranslate nohighlight">\(w\)</span> is a trivial positive value.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cp</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">40</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">60</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">boolean</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="n">boolean</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">()</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+
+<span class="n">constrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">m</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">constrs</span> <span class="o">+=</span> <span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,:],(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">constrs</span> <span class="o">+=</span> <span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,:])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">constrs</span> <span class="o">+=</span> <span class="p">[</span><span class="n">w</span> <span class="o">&gt;=</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
 
 <span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constrs</span><span class="p">)</span>
 
