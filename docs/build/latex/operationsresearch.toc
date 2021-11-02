@@ -1,20 +1,11 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Sub section}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Sub subsection}{1}{subsection.1.1.1}%
-\contentsline {chapter}{\numberline {2}Vectors}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Scalars}{3}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Vectors: geometry and algebra}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Transpose Operation}{3}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Vector addition and subtraction}{3}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Vector\sphinxhyphen {}scalar multiplication}{3}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Vector multiplication}{5}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Vector dot product: Algebra}{5}{section.3.1}%
-\contentsline {chapter}{\numberline {4}Optimization Algorithms}{7}{chapter.4}%
-\contentsline {section}{\numberline {4.1}The Simplex Method}{7}{section.4.1}%
-\contentsline {section}{\numberline {4.2}The Branch and Bound Algorithm}{7}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Gradient Descent and Newton’s Method}{7}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Examples}{7}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Machine Scheduling Problem}{7}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Facility Location Problem}{9}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Indices and tables}{13}{chapter.5}%
+\contentsline {chapter}{\numberline {1}Models and Applications}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Linear Programming}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Optimization Algorithms}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}The Simplex Method}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}The Branch and Bound Algorithm}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Gradient Descent and Newton’s Method}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Examples}{3}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Machine Scheduling Problem}{3}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Facility Location Problem}{5}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Indices and tables}{9}{chapter.3}%

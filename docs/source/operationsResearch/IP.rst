@@ -1,27 +1,25 @@
-=======================
-Optimization Algorithms
-=======================
+===================
+Integer Programming
+===================
 
-.. contents:: 
+.. contents::
 
-------------------
-The Simplex Method
-------------------
+--------
+IP Model 
+--------
+
+----------------
+Solution Methods
+---------------- 
 
 
-------------------------------
 The Branch and Bound Algorithm
-------------------------------
+==============================
 
 
-
-------------------------------------
-Gradient Descent and Newton's Method
------------------------------------- 
-
---------
-Examples
---------
+------------
+Applications
+------------
 
 Machine Scheduling Problem
 ==========================
@@ -256,5 +254,4 @@ Decision variable :math:`w` is a trivial positive value.
     prob = cp.Problem(obj, constrs) 
 
     prob.solve(solver=cp.GUROBI)
-
 

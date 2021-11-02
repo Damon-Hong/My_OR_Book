@@ -1,4 +1,4 @@
 {
-    "restructuredtext.confPath": "${workspaceFolder}\\docs\\source",
-    "livePreview.defaultPreviewPath": "/docs/source/_build/html/index.html"
+    "livePreview.defaultPreviewPath": "/docs/source/_build/html/index.html",
+    "restructuredtext.confPath": "${workspaceFolder}\\docs\\source"
 }

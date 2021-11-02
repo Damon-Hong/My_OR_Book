@@ -7,19 +7,15 @@ Operations Research Documentation
 =============================================================
 
 .. toctree::
-   :maxdepth: 3
-   :caption: Linear Algebra
+   :maxdepth: 5
+   :caption: Table of Contents
 
-   LinearAlgebra/Introduction 
-   LinearAlgebra/Vectors
-   LinearAlgebra/VectorMultiplication
+   operationsResearch/LP
+   operationsResearch/IP 
+   operationsResearch/NLP 
 
 
-.. toctree::
-   :maxdepth: 3
-   :caption: Operations Research
 
-   OperationsResearch/OptimizationAlgorithms 
 
 
 

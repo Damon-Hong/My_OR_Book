@@ -78,7 +78,7 @@ INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\base\fontenc.sty
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm1000.tfm
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\cmap\t1.cmap
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\cmap\t1.cmap
-OUTPUT operationsresearch.pdf
+OUTPUT book.pdf
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\cmap\t1.cmap
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
@@ -178,10 +178,6 @@ INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
-INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\english.ldf
-INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\english.ldf
-INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\english.ldf
-INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\english.ldf
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\english.ldf
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\english.ldf
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\english.ldf
@@ -1085,6 +1081,8 @@ INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ts1
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qtmri.tfm
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qtmr.tfm
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qhvr.tfm
+INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qtmr.tfm
+INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qtmr.tfm
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\txfonts\t1txtt.fd
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\txfonts\t1txtt.fd
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\txfonts\t1txtt.fd
@@ -1092,8 +1090,6 @@ INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\tex\latex\txfonts\t1txtt.fd
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\t1xtt.tfm
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\t1xtt.tfm
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\txfonts\t1xbtt.tfm
-INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qtmr.tfm
-INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qtmr.tfm
 INPUT C:\Users\damon\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qtmr.tfm
 INPUT .\operationsresearch.ind
 INPUT operationsresearch.ind

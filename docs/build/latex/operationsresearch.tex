@@ -53,15 +53,15 @@
 % Set up styles of URL: it should be placed after hyperref.
 \urlstyle{same}
 
-\addto\captionsenglish{\renewcommand{\contentsname}{Linear Algebra}}
+\addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
 
 \usepackage{sphinxmessages}
-\setcounter{tocdepth}{2}
-
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
 
 
 \title{Operations Research Documentation}
-\date{Oct 30, 2021}
+\date{Nov 02, 2021}
 \release{1.0}
 \author{Qiuyi Hong}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -83,164 +83,44 @@
 
 
 
-\chapter{Introduction}
-\label{\detokenize{LinearAlgebra/Introduction:introduction}}\label{\detokenize{LinearAlgebra/Introduction::doc}}
-\begin{sphinxShadowBox}
-\sphinxstyletopictitle{Contents}
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{LinearAlgebra/Introduction:id1}}{\hyperref[\detokenize{LinearAlgebra/Introduction:introduction}]{\sphinxcrossref{Introduction}}}
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{LinearAlgebra/Introduction:id2}}{\hyperref[\detokenize{LinearAlgebra/Introduction:sub-section}]{\sphinxcrossref{Sub section}}}
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{LinearAlgebra/Introduction:id3}}{\hyperref[\detokenize{LinearAlgebra/Introduction:sub-subsection}]{\sphinxcrossref{Sub subsection}}}
+\chapter{Models and Applications}
+\label{\detokenize{operationsResearch/modelsAndApplications:models-and-applications}}\label{\detokenize{operationsResearch/modelsAndApplications::doc}}
 
-\end{itemize}
-
-\end{itemize}
-
-\end{itemize}
-\end{sphinxShadowBox}
-
-
-\section{Sub section}
-\label{\detokenize{LinearAlgebra/Introduction:sub-section}}
-
-\subsection{Sub subsection}
-\label{\detokenize{LinearAlgebra/Introduction:sub-subsection}}\label{\detokenize{LinearAlgebra/Introduction:introductioncode}}\begin{equation*}
-\begin{split}k_{\rm eq} = (2 \Omega_{\rm M} H_0^2 z_{\rm eq})^{1/2}\end{split}
-\end{equation*}
-\sphinxAtStartPar
-This is math equation \(\sum_{n=1}^{N} x^{2} + y^{2} = 1\)
-\begin{equation*}
-\begin{split}\frac{x}{y}\end{split}
-\end{equation*}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{)}\PYG{p}{:}
-    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
-\end{sphinxVerbatim}
-
-\begin{sphinxadmonition}{note}{Note:}
-\sphinxAtStartPar
-This is a note!
-\end{sphinxadmonition}
-
-
-\chapter{Vectors}
-\label{\detokenize{LinearAlgebra/Vectors:vectors}}\label{\detokenize{LinearAlgebra/Vectors::doc}}
-\begin{sphinxShadowBox}
-\sphinxstyletopictitle{Contents}
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{LinearAlgebra/Vectors:id1}}{\hyperref[\detokenize{LinearAlgebra/Vectors:vectors}]{\sphinxcrossref{Vectors}}}
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{LinearAlgebra/Vectors:id2}}{\hyperref[\detokenize{LinearAlgebra/Vectors:scalars}]{\sphinxcrossref{Scalars}}}
-
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{LinearAlgebra/Vectors:id3}}{\hyperref[\detokenize{LinearAlgebra/Vectors:vectors-geometry-and-algebra}]{\sphinxcrossref{Vectors: geometry and algebra}}}
-
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{LinearAlgebra/Vectors:id4}}{\hyperref[\detokenize{LinearAlgebra/Vectors:transpose-operation}]{\sphinxcrossref{Transpose Operation}}}
-
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{LinearAlgebra/Vectors:id5}}{\hyperref[\detokenize{LinearAlgebra/Vectors:vector-addition-and-subtraction}]{\sphinxcrossref{Vector addition and subtraction}}}
-
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{LinearAlgebra/Vectors:id6}}{\hyperref[\detokenize{LinearAlgebra/Vectors:vector-scalar-multiplication}]{\sphinxcrossref{Vector\sphinxhyphen{}scalar multiplication}}}
-
-\end{itemize}
-
-\end{itemize}
-\end{sphinxShadowBox}
-
-
-\section{Scalars}
-\label{\detokenize{LinearAlgebra/Vectors:scalars}}
-
-\section{Vectors: geometry and algebra}
-\label{\detokenize{LinearAlgebra/Vectors:vectors-geometry-and-algebra}}
-
-\section{Transpose Operation}
-\label{\detokenize{LinearAlgebra/Vectors:transpose-operation}}
-
-\section{Vector addition and subtraction}
-\label{\detokenize{LinearAlgebra/Vectors:vector-addition-and-subtraction}}
-
-\section{Vector\sphinxhyphen{}scalar multiplication}
-\label{\detokenize{LinearAlgebra/Vectors:vector-scalar-multiplication}}
-\sphinxAtStartPar
-Go and check {\hyperref[\detokenize{LinearAlgebra/Introduction:introductioncode}]{\sphinxcrossref{\DUrole{std,std-ref}{Sub subsection}}}}
-
-\sphinxAtStartPar
-Check doc {\hyperref[\detokenize{LinearAlgebra/Introduction::doc}]{\sphinxcrossref{\DUrole{doc}{Introduction}}}}
-
-
-\chapter{Vector multiplication}
-\label{\detokenize{LinearAlgebra/VectorMultiplication:vector-multiplication}}\label{\detokenize{LinearAlgebra/VectorMultiplication::doc}}
-\begin{sphinxShadowBox}
-\sphinxstyletopictitle{Contents}
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{LinearAlgebra/VectorMultiplication:id1}}{\hyperref[\detokenize{LinearAlgebra/VectorMultiplication:vector-multiplication}]{\sphinxcrossref{Vector multiplication}}}
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{LinearAlgebra/VectorMultiplication:id2}}{\hyperref[\detokenize{LinearAlgebra/VectorMultiplication:vector-dot-product-algebra}]{\sphinxcrossref{Vector dot product: Algebra}}}
-
-\end{itemize}
-
-\end{itemize}
-\end{sphinxShadowBox}
-
-
-\section{Vector dot product: Algebra}
-\label{\detokenize{LinearAlgebra/VectorMultiplication:vector-dot-product-algebra}}
+\section{Linear Programming}
+\label{\detokenize{operationsResearch/modelsAndApplications:linear-programming}}
 
 \chapter{Optimization Algorithms}
-\label{\detokenize{OperationsResearch/OptimizationAlgorithms:optimization-algorithms}}\label{\detokenize{OperationsResearch/OptimizationAlgorithms::doc}}
+\label{\detokenize{operationsResearch/optimizationAlgorithms:optimization-algorithms}}\label{\detokenize{operationsResearch/optimizationAlgorithms::doc}}
 \begin{sphinxShadowBox}
 \sphinxstyletopictitle{Contents}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{OperationsResearch/OptimizationAlgorithms:id4}}{\hyperref[\detokenize{OperationsResearch/OptimizationAlgorithms:optimization-algorithms}]{\sphinxcrossref{Optimization Algorithms}}}
+\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id4}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:optimization-algorithms}]{\sphinxcrossref{Optimization Algorithms}}}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{OperationsResearch/OptimizationAlgorithms:id5}}{\hyperref[\detokenize{OperationsResearch/OptimizationAlgorithms:the-simplex-method}]{\sphinxcrossref{The Simplex Method}}}
+\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id5}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:the-simplex-method}]{\sphinxcrossref{The Simplex Method}}}
 
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{OperationsResearch/OptimizationAlgorithms:id6}}{\hyperref[\detokenize{OperationsResearch/OptimizationAlgorithms:the-branch-and-bound-algorithm}]{\sphinxcrossref{The Branch and Bound Algorithm}}}
+\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id6}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:the-branch-and-bound-algorithm}]{\sphinxcrossref{The Branch and Bound Algorithm}}}
 
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{OperationsResearch/OptimizationAlgorithms:id7}}{\hyperref[\detokenize{OperationsResearch/OptimizationAlgorithms:gradient-descent-and-newton-s-method}]{\sphinxcrossref{Gradient Descent and Newton’s Method}}}
+\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id7}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:gradient-descent-and-newton-s-method}]{\sphinxcrossref{Gradient Descent and Newton’s Method}}}
 
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{OperationsResearch/OptimizationAlgorithms:id8}}{\hyperref[\detokenize{OperationsResearch/OptimizationAlgorithms:examples}]{\sphinxcrossref{Examples}}}
+\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id8}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:examples}]{\sphinxcrossref{Examples}}}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{OperationsResearch/OptimizationAlgorithms:id9}}{\hyperref[\detokenize{OperationsResearch/OptimizationAlgorithms:machine-scheduling-problem}]{\sphinxcrossref{Machine Scheduling Problem}}}
+\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id9}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:machine-scheduling-problem}]{\sphinxcrossref{Machine Scheduling Problem}}}
 
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{OperationsResearch/OptimizationAlgorithms:id10}}{\hyperref[\detokenize{OperationsResearch/OptimizationAlgorithms:facility-location-problem}]{\sphinxcrossref{Facility Location Problem}}}
+\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id10}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:facility-location-problem}]{\sphinxcrossref{Facility Location Problem}}}
 
 \end{itemize}
 
@@ -251,19 +131,19 @@ Check doc {\hyperref[\detokenize{LinearAlgebra/Introduction::doc}]{\sphinxcrossr
 
 
 \section{The Simplex Method}
-\label{\detokenize{OperationsResearch/OptimizationAlgorithms:the-simplex-method}}
+\label{\detokenize{operationsResearch/optimizationAlgorithms:the-simplex-method}}
 
 \section{The Branch and Bound Algorithm}
-\label{\detokenize{OperationsResearch/OptimizationAlgorithms:the-branch-and-bound-algorithm}}
+\label{\detokenize{operationsResearch/optimizationAlgorithms:the-branch-and-bound-algorithm}}
 
 \section{Gradient Descent and Newton’s Method}
-\label{\detokenize{OperationsResearch/OptimizationAlgorithms:gradient-descent-and-newton-s-method}}
+\label{\detokenize{operationsResearch/optimizationAlgorithms:gradient-descent-and-newton-s-method}}
 
 \section{Examples}
-\label{\detokenize{OperationsResearch/OptimizationAlgorithms:examples}}
+\label{\detokenize{operationsResearch/optimizationAlgorithms:examples}}
 
 \subsection{Machine Scheduling Problem}
-\label{\detokenize{OperationsResearch/OptimizationAlgorithms:machine-scheduling-problem}}
+\label{\detokenize{operationsResearch/optimizationAlgorithms:machine-scheduling-problem}}
 \sphinxAtStartPar
 Fifteen jobs, each with its processing time, should be scheduled on three machines.
 If two jobs cannot be scheduled on the same machine, they are called conflicting jobs.
@@ -276,7 +156,7 @@ Note that a job may have no conflicting jobs.
 \centering
 \sphinxcapstartof{table}
 \sphinxthecaptionisattop
-\sphinxcaption{Table 1: Data}\label{\detokenize{OperationsResearch/OptimizationAlgorithms:id1}}
+\sphinxcaption{Table 1: Data}\label{\detokenize{operationsResearch/optimizationAlgorithms:id1}}
 \sphinxaftertopcaption
 \begin{tabulary}{\linewidth}[t]{|T|T|T|}
 \hline
@@ -522,7 +402,7 @@ Decision variable \(w\) is a trivial positive value.
 
 
 \subsection{Facility Location Problem}
-\label{\detokenize{OperationsResearch/OptimizationAlgorithms:facility-location-problem}}
+\label{\detokenize{operationsResearch/optimizationAlgorithms:facility-location-problem}}
 \sphinxAtStartPar
 A city is divided into \(n\) districts. The time (in minutes) it takes an ambulance to travel from District \(i\) to
 District \(j\) is denoted as \(d_{ij}\). The population of District \(i\) (in thousands) is \(p_{i}\).
@@ -535,7 +415,7 @@ minutes to travel from District 2 to District 3, and there are 40,000 citizens.
 \centering
 \sphinxcapstartof{table}
 \sphinxthecaptionisattop
-\sphinxcaption{Table 2: distances}\label{\detokenize{OperationsResearch/OptimizationAlgorithms:id2}}
+\sphinxcaption{Table 2: distances}\label{\detokenize{operationsResearch/optimizationAlgorithms:id2}}
 \sphinxaftertopcaption
 \begin{tabulary}{\linewidth}[t]{|T|T|T|T|T|T|T|T|T|}
 \hline
@@ -801,7 +681,7 @@ District
 \centering
 \sphinxcapstartof{table}
 \sphinxthecaptionisattop
-\sphinxcaption{Table 3: District Population}\label{\detokenize{OperationsResearch/OptimizationAlgorithms:id3}}
+\sphinxcaption{Table 3: District Population}\label{\detokenize{operationsResearch/optimizationAlgorithms:id3}}
 \sphinxaftertopcaption
 \begin{tabulary}{\linewidth}[t]{|T|T|}
 \hline

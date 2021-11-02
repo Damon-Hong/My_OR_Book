@@ -155,7 +155,7 @@ minutes to travel from District 2 to District 3, and there are 40,000 citizens.
     8         10  9   7   4   4   2   2   0
     ========  ==  ==  ==  ==  ==  ==  ==  == 
 
-.. table:: District Population 
+.. table:: Table 3: District Population 
 
     ========  ==========
     District  Population
