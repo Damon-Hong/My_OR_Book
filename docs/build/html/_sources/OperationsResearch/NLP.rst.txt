@@ -24,3 +24,4 @@ Newton's Method
 ------------
 Applications
 ------------
+

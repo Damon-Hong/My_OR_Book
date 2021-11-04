@@ -12,10 +12,28 @@ LP Model
 Solution Methods
 ---------------- 
 
+ 
+
 The Simplex Method
 ==================
+
+
+
+.. code:: matlab 
+
+    for i = [1:10]
+        disp("hello world")
+         
+    end 
+
+
+
+
 
 
 ------------
 Applications
 ------------
+
+
+

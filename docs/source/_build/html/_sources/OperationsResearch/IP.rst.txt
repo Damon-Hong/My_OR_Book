@@ -8,9 +8,14 @@ Integer Programming
 IP Model 
 --------
 
+Hello World
+
+
+
 ----------------
 Solution Methods
 ---------------- 
+
 
 
 The Branch and Bound Algorithm
@@ -66,9 +71,9 @@ and obtain an optimal schedule. Write down the minimized makespan (i.e. the obje
 an optimal solution).
 
 
-.. math::
-
-    \min_{X_{i,j}, w} w   
+.. math:: 
+    
+    \min_{X_{i,j}, w} w
 
 subject to:
 
@@ -97,7 +102,7 @@ Decision variable :math:`X_{i,j} = \left\{\begin{matrix}
 Decision variable :math:`w` is a trivial positive value. 
 
 
-.. code::
+.. code-block:: python
 
     import numpy as np 
     import cvxpy as cp 
@@ -214,7 +219,7 @@ Decision variable :math:`x_{j} = \left\{\begin{matrix}
 Decision variable :math:`w` is a trivial positive value. 
 
 
-.. code:: 
+.. code-block:: python
 
     import numpy as np 
     import cvxpy as cp 
@@ -254,4 +259,5 @@ Decision variable :math:`w` is a trivial positive value.
     prob = cp.Problem(obj, constrs) 
 
     prob.solve(solver=cp.GUROBI)
+
 
