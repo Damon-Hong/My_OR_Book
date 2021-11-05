@@ -15,6 +15,7 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -42,9 +43,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Linear Programming</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#lp-model">LP Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#solution-methods">Solution Methods</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-simplex-method">The Simplex Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-simplex-method">The Simplex Method</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-matrix-way-for-the-simplex-method">The matrix way for the simplex method</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#duality-theory">Duality Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#applications">Applications</a></li>
 </ul>
 </li>
@@ -86,10 +91,15 @@
 <li><p><a class="reference internal" href="#lp-model" id="id2">LP Model</a></p></li>
 <li><p><a class="reference internal" href="#solution-methods" id="id3">Solution Methods</a></p>
 <ul>
-<li><p><a class="reference internal" href="#the-simplex-method" id="id4">The Simplex Method</a></p></li>
+<li><p><a class="reference internal" href="#the-simplex-method" id="id4">The Simplex Method</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-matrix-way-for-the-simplex-method" id="id5">The matrix way for the simplex method</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#applications" id="id5">Applications</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#duality-theory" id="id6">Duality Theory</a></p></li>
+<li><p><a class="reference internal" href="#applications" id="id7">Applications</a></p></li>
 </ul>
 </li>
 </ul>
@@ -101,16 +111,138 @@
 <h2><a class="toc-backref" href="#id3">Solution Methods</a><a class="headerlink" href="#solution-methods" title="Permalink to this headline"></a></h2>
 <section id="the-simplex-method">
 <h3><a class="toc-backref" href="#id4">The Simplex Method</a><a class="headerlink" href="#the-simplex-method" title="Permalink to this headline"></a></h3>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span><span class="w"></span>
-
-<span class="k">end</span><span class="w"></span>
-</pre></div>
-</div>
+<section id="the-matrix-way-for-the-simplex-method">
+<h4><a class="toc-backref" href="#id5">The matrix way for the simplex method</a><a class="headerlink" href="#the-matrix-way-for-the-simplex-method" title="Permalink to this headline"></a></h4>
+<p>The easiest way of doing this is to use the <strong>matrix representation</strong> for the simplex method.</p>
+<p>Consider a standard form linear program:</p>
+<div class="math notranslate nohighlight">
+\[\max_{x} c^{T}x\]</div>
+<p>subject to:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}Ax=b\\x \geq 0\end{aligned}\end{align} \]</div>
+<p>By dividing <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(x_{B}\)</span> and <span class="math notranslate nohighlight">\(x_{N}\)</span>, the basic and non-basic variables,
+we have:</p>
+<div class="math notranslate nohighlight">
+\[\max_{x_{B},x_{N}} c_{B}^{T}x_{B} + c_{N}^{T}x_{N}\]</div>
+<p>subject to:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}&amp; A_{B}x_{B} + A_{N}x_{N} = b\\&amp; x_{B},x_{N} \geq 0\end{aligned}\end{align} \]</div>
+<p>where <span class="math notranslate nohighlight">\(c^{T} = [c_{B}^{T},c_{N}^{T}]\)</span>, <span class="math notranslate nohighlight">\(A=[A_{B}, A_{N}]\)</span>.</p>
+<p>After rearrange the optimization problem, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[\max_{x_{N}} c_{B}^{T}A_{B}^{-1}b - (c_{B}^{T}A_{B}^{-1}A_{N} - c_{N}^{T})x_{N}\]</div>
+<p>subject to:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}&amp; I x_{B}+A_{B}^{-1}A_{N}x_{N} = A_{B}^{-1}b\\&amp; x_{B}, x_{N} \geq 0\end{aligned}\end{align} \]</div>
+<p>Let’s ignore the sign constraints and let <span class="math notranslate nohighlight">\(z\)</span> be the objective value. We then have:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}&amp; z \quad + (c_{B}^{T}A_{B}^{-1}A_{N} - c_{N}^{T})x_{N} = c_{B}^{T}A_{B}^{-1}b\\&amp; \quad I x_{B}+ \quad A_{B}^{-1}A_{N}x_{N} = A_{B}^{-1}b\end{aligned}\end{align} \]</div>
+<p>Therefore, given <strong>any valid choice of B and N</strong> (the index sets of basic and non-basic variables),
+we may use the following table to calculate the simplex tableau:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 54%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>0</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(c_{B}^{T}A_{B}^{-1}A_{N} - c_{N}^{T}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(c_{B}^{T}A_{B}^{-1}b\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(I\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_{B}^{-1}A_{N}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(A_{B}^{-1}b\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>basic</p></td>
+<td><p>non-basic</p></td>
+<td><p>RHS</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>References:</strong></p>
+<p><a class="reference external" href="https://www.coursera.org/learn/operations-research-theory/lecture/c2huQ/1-3-the-simplex-method-in-metrics">Operations Research Theory, Ling-Chiech Kung, National Taiwan University</a></p>
 </section>
+</section>
+</section>
+<section id="duality-theory">
+<h2><a class="toc-backref" href="#id6">Duality Theory</a><a class="headerlink" href="#duality-theory" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>If primal problem is a maximization problem, then the dual problem aims to minimize the
+<strong>upper bound</strong> of primal objective function value.</p></li>
+<li><p>If primal problem is a minimization problem, then the dual problem aims to maximize the
+<strong>lower bound</strong> of primal objective function value.</p></li>
+</ul>
+<p><strong>The general rule:</strong></p>
+<p>In general, if the primal LP is:</p>
+<div class="math notranslate nohighlight">
+\[\underset{x_1,x_2,x_3}{\text{Maximize }} c_1x_1 + c_2x_2 + c_3x_3\]</div>
+<p>subject to:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}A_{1,1}x_1 + A_{1,2}x_2 + A_{1,3}x_3 \geq b_1\\A_{2,1}x_1 + A_{2,2}x_2 + A_{2,3}x_3 \leq b_2\\A_{3,1}x_1 + A_{3,2}x_2 + A_{3,3}x_3 = b_3\\x_1 \geq 0, x_2 \leq 0, x_3 \text{ is urs}\end{aligned}\end{align} \]</div>
+<p>Its dual LP is:</p>
+<div class="math notranslate nohighlight">
+\[\underset{y_1,y_2,y_3}{\text{Minimize }} b_1y_1 + b_2y_2 + b_3y_3\]</div>
+<p>subject to:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}A_{1,1}y_1 + A_{2,1}y_2 + A_{3,1}y_3 \geq c_1\\A_{1,2}y_1 + A_{2,2}y_2 + A_{3,2}y_3 \leq c_2\\A_{1,3}y_1 + A_{2,3}y_2 + A_{3,3}y_3 = c_3\\y_1 \leq 0, y_2 \geq 0, y_3 \text{ is urs}\end{aligned}\end{align} \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The constraint coefficient matrix is <strong>transposed</strong>.</p>
+</div>
+<p><strong>The dual problem can be derived as follows:</strong></p>
+<p>1. The primal is a maximization problem, so we need a upper bound of the objective function. Therefore, <span class="math notranslate nohighlight">\(\leq\)</span> is needed.
+Because of it, we then know dual variable <span class="math notranslate nohighlight">\(y_1\)</span> is nonpositive, <span class="math notranslate nohighlight">\(y_2\)</span> is nonnegative, and <span class="math notranslate nohighlight">\(y_3\)</span> is unrestricted in sign (urs). Then, the system of constraints
+reformulated as:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}A_{1,1}x_1y_1 + A_{1,2}x_2y_1 + A_{1,3}x_3y_1 \leq b_1 y_1\\A_{2,1}x_1y_2 + A_{2,2}x_2y_2 + A_{2,3}x_3y_2 \leq b_2y_2\\A_{3,1}x_1y_3 + A_{3,2}x_2y_3 + A_{3,3}x_3y_3 = b_3y_3\end{aligned}\end{align} \]</div>
+<ol class="arabic simple" start="2">
+<li><p>If we combine these constraints together, then we get:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gathered}
+(A_{1,1}y_1+A_{2,1}y_2+A_{3,1}y_3)x_1 + (A_{1,2}y_1+A_{2,2}y_2+A_{3,2}y_3)x_2 + \\
+(A_{1,3}y_1+A_{2,3}y_2+A_{3,3}y_3)x_3 \leq b_1y_1 + b_2y_2 + b_3y_3
+\end{gathered}\end{split}\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(b_1y_1 + b_2y_2 + b_3y_3\)</span> can be treated as a upper bound.</p>
+<ol class="arabic simple" start="3">
+<li><p>Then we can derive a sequence of inequalities, which is:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gathered}
+c_1x_1+c_2x_2+c_3x_3 \leq (A_{1,1}y_1+A_{2,1}y_2+A_{3,1}y_3)x_1 + (A_{1,2}y_1+A_{2,2}y_2+A_{3,2}y_3)x_2 + \\
+(A_{1,3}y_1+A_{2,3}y_2+A_{3,3}y_3)x_3 \leq b_1y_1 + b_2y_2 + b_3y_3
+\end{gathered}\end{split}\]</div>
+<p>To make sure these (especially first) inequalities are always satisfied for all <span class="math notranslate nohighlight">\(x_1 \geq 0, x_2 \leq 0\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span> is urs,
+we can get a system of inequalities:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}c_1 \leq A_{1,1}y_1+A_{2,1}y_2+A_{3,1}y_3\\c_2 \geq A_{1,2}y_1+A_{2,2}y_2+A_{3,2}y_3\\c_3 = A_{1,3}y_1+A_{2,3}y_2+A_{3,3}y_3\end{aligned}\end{align} \]</div>
+<p>4. Finally, we want to minimize the upper bound value <span class="math notranslate nohighlight">\(b_1y_1 + b_2y_2 + b_3y_3\)</span>, so that it can be closer to our original objective value.
+Therefore, we can formulate an optimization problem as follows:</p>
+<div class="math notranslate nohighlight">
+\[\underset{y_1,y_2,y_3}{\text{Minimize }} b_1y_1 + b_2y_2 + b_3y_3\]</div>
+<p>subject to:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}A_{1,1}y_1 + A_{2,1}y_2 + A_{3,1}y_3 \geq c_1\\A_{1,2}y_1 + A_{2,2}y_2 + A_{3,2}y_3 \leq c_2\\A_{1,3}y_1 + A_{2,3}y_2 + A_{3,3}y_3 = c_3\\y_1 \leq 0, y_2 \geq 0, y_3 \text{ is urs}\end{aligned}\end{align} \]</div>
+<p>This is how we derive a dual problem from a primal maximization problem.</p>
+<p><strong>Standard form primal problem:</strong></p>
+<p>In general, if the primal LP is in the standard form as:</p>
+<div class="math notranslate nohighlight">
+\[\underset{x_1,x_2,x_3}{\text{Maximize }} c_1x_1 + c_2x_2 + c_3x_3\]</div>
+<p>subject to:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}A_{1,1}x_1 + A_{1,2}x_2 + A_{1,3}x_3 = b_1\\A_{2,1}x_1 + A_{2,2}x_2 + A_{2,3}x_3 = b_2\\A_{3,1}x_1 + A_{3,2}x_2 + A_{3,3}x_3 = b_3\\x_1 \geq 0, x_2 \geq 0, x_3 \geq 0\end{aligned}\end{align} \]</div>
+<p>Then, its dual LP is:</p>
+<div class="math notranslate nohighlight">
+\[\underset{y_1,y_2,y_3}{\text{Minimize }} b_1y_1 + b_2y_2 + b_3y_3\]</div>
+<p>subject to:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}A_{1,1}y_1 + A_{2,1}y_2 + A_{3,1}y_3 \geq c_1\\A_{1,2}y_1 + A_{2,2}y_2 + A_{3,2}y_3 \leq c_2\\A_{1,3}y_1 + A_{2,3}y_2 + A_{3,3}y_3 = c_3\\y_1 \leq 0, y_2 \geq 0, y_3 \text{ is urs}\end{aligned}\end{align} \]</div>
 </section>
 <section id="applications">
-<h2><a class="toc-backref" href="#id5">Applications</a><a class="headerlink" href="#applications" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id7">Applications</a><a class="headerlink" href="#applications" title="Permalink to this headline"></a></h2>
 </section>
 </section>
 

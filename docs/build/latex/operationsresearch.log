@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.31)  2 NOV 2021 20:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.10.31)  5 NOV 2021 00:04
 entering extended mode
 **./operationsresearch.tex
 (operationsresearch.tex
@@ -42,9 +42,6 @@ Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
 )
 (C:\Users\damon\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-
-! I can't write on file `operationsresearch.pdf'.
-Please type another file name for output: book
 <<t1.cmap>>)
 (C:\Users\damon\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2021/04/20 v2.17j AMS math features
@@ -792,39 +789,43 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 Chapter 1.
-[1
-
-] [2
-
-]
-Chapter 2.
 LaTeX Font Info:    Trying to load font information for TS1+qtm on input line 9
-7.
+1.
 (C:\Users\damon\AppData\Local\Programs\MiKTeX\tex/latex/tex-gyre\ts1qtm.fd
 File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 )
-[3]
-LaTeX Font Info:    Trying to load font information for T1+txtt on input line 3
-72.
+[1
+
+] [2]
+Chapter 2.
+[3
+
+]
+LaTeX Font Info:    Trying to load font information for T1+txtt on input line 5
+15.
  (C:\Users\damon\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txtt/b/n' in size <10> not available
-(Font)              Font shape `T1/txtt/bx/n' tried instead on input line 373.
+(Font)              Font shape `T1/txtt/bx/n' tried instead on input line 516.
 
 [4] [5] [6] [7] [8
 
 ]
 Chapter 3.
-(operationsresearch.ind) [9] (operationsresearch.aux)
+[9] [10
+
+]
+Chapter 4.
+(operationsresearch.ind) [11] (operationsresearch.aux)
 Package rerunfilecheck Info: File `operationsresearch.out' has not changed.
-(rerunfilecheck)             Checksum: 5C872E3BBE7A06C4B43F8130A62379C7;1710.
+(rerunfilecheck)             Checksum: 3E8EA2ED6C0D98EFC9393240B0AE4C64;2956.
  ) 
 Here is how much of TeX's memory you used:
- 13926 strings out of 478907
- 211867 string characters out of 2851891
- 585677 words of memory out of 3000000
- 31401 multiletter control sequences out of 15000+600000
+ 13986 strings out of 478907
+ 212717 string characters out of 2851891
+ 586669 words of memory out of 3000000
+ 31438 multiletter control sequences out of 15000+600000
  462878 words of font info for 70 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  72i,16n,80p,553b,497s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -849,9 +850,9 @@ c/tex-gyre/qtmr.pfb><C:/Users/damon/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/tex-gyre/qtmri.pfb><C:/Users/damon/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/txfonts/t1xbtt.pfb><C:/Users/damon/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/txfonts/t1xtt.pfb>
-Output written on book.pdf (13 pages, 276196 bytes).
+Output written on operationsresearch.pdf (15 pages, 296665 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
- 34 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 303 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -61,7 +61,7 @@
 
 
 \title{Operations Research Documentation}
-\date{Nov 02, 2021}
+\date{Nov 05, 2021}
 \release{1.0}
 \author{Qiuyi Hong}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -83,44 +83,184 @@
 
 
 
-\chapter{Models and Applications}
-\label{\detokenize{operationsResearch/modelsAndApplications:models-and-applications}}\label{\detokenize{operationsResearch/modelsAndApplications::doc}}
-
-\section{Linear Programming}
-\label{\detokenize{operationsResearch/modelsAndApplications:linear-programming}}
-
-\chapter{Optimization Algorithms}
-\label{\detokenize{operationsResearch/optimizationAlgorithms:optimization-algorithms}}\label{\detokenize{operationsResearch/optimizationAlgorithms::doc}}
+\chapter{Linear Programming}
+\label{\detokenize{operationsResearch/LP:linear-programming}}\label{\detokenize{operationsResearch/LP::doc}}
 \begin{sphinxShadowBox}
 \sphinxstyletopictitle{Contents}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id4}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:optimization-algorithms}]{\sphinxcrossref{Optimization Algorithms}}}
+\phantomsection\label{\detokenize{operationsResearch/LP:id1}}{\hyperref[\detokenize{operationsResearch/LP:linear-programming}]{\sphinxcrossref{Linear Programming}}}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id5}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:the-simplex-method}]{\sphinxcrossref{The Simplex Method}}}
+\phantomsection\label{\detokenize{operationsResearch/LP:id2}}{\hyperref[\detokenize{operationsResearch/LP:lp-model}]{\sphinxcrossref{LP Model}}}
 
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id6}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:the-branch-and-bound-algorithm}]{\sphinxcrossref{The Branch and Bound Algorithm}}}
-
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id7}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:gradient-descent-and-newton-s-method}]{\sphinxcrossref{Gradient Descent and Newton’s Method}}}
-
-\item {} 
-\sphinxAtStartPar
-\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id8}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:examples}]{\sphinxcrossref{Examples}}}
+\phantomsection\label{\detokenize{operationsResearch/LP:id3}}{\hyperref[\detokenize{operationsResearch/LP:solution-methods}]{\sphinxcrossref{Solution Methods}}}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id9}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:machine-scheduling-problem}]{\sphinxcrossref{Machine Scheduling Problem}}}
+\phantomsection\label{\detokenize{operationsResearch/LP:id4}}{\hyperref[\detokenize{operationsResearch/LP:the-simplex-method}]{\sphinxcrossref{The Simplex Method}}}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/LP:id5}}{\hyperref[\detokenize{operationsResearch/LP:the-matrix-way-for-the-simplex-method}]{\sphinxcrossref{The matrix way for the simplex method}}}
+
+\end{itemize}
+
+\end{itemize}
 
 \item {} 
 \sphinxAtStartPar
-\phantomsection\label{\detokenize{operationsResearch/optimizationAlgorithms:id10}}{\hyperref[\detokenize{operationsResearch/optimizationAlgorithms:facility-location-problem}]{\sphinxcrossref{Facility Location Problem}}}
+\phantomsection\label{\detokenize{operationsResearch/LP:id6}}{\hyperref[\detokenize{operationsResearch/LP:applications}]{\sphinxcrossref{Applications}}}
+
+\end{itemize}
+
+\end{itemize}
+\end{sphinxShadowBox}
+
+
+\section{LP Model}
+\label{\detokenize{operationsResearch/LP:lp-model}}
+
+\section{Solution Methods}
+\label{\detokenize{operationsResearch/LP:solution-methods}}
+
+\subsection{The Simplex Method}
+\label{\detokenize{operationsResearch/LP:the-simplex-method}}
+
+\subsubsection{The matrix way for the simplex method}
+\label{\detokenize{operationsResearch/LP:the-matrix-way-for-the-simplex-method}}
+\sphinxAtStartPar
+The easiest way of doing this is to use the \sphinxstylestrong{matrix representation} for the simplex method.
+
+\sphinxAtStartPar
+Consider a standard form linear program:
+\begin{equation*}
+\begin{split}\max_{x} c^{T}x\end{split}
+\end{equation*}
+\sphinxAtStartPar
+subject to:
+\begin{align*}\!\begin{aligned}
+Ax=b\\
+x \geq 0\\
+\end{aligned}\end{align*}
+\sphinxAtStartPar
+By dividing \(x\) to \(x_{B}\) and \(x_{N}\), the basic and non\sphinxhyphen{}basic variables,
+we have:
+\begin{equation*}
+\begin{split}\max_{x_{B},x_{N}} c_{B}^{T}x_{B} + c_{N}^{T}x_{N}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+subject to:
+\begin{align*}\!\begin{aligned}
+& A_{B}x_{B} + A_{N}x_{N} = b\\
+& x_{B},x_{N} \geq 0\\
+\end{aligned}\end{align*}
+\sphinxAtStartPar
+where \(c^{T} = [c_{B}^{T},c_{N}^{T}]\), \(A=[A_{B}, A_{N}]\).
+
+\sphinxAtStartPar
+After rearrange the optimization problem, we obtain:
+\begin{equation*}
+\begin{split}\max_{x_{N}} c_{B}^{T}A_{B}^{-1}b - (c_{B}^{T}A_{B}^{-1}A_{N} - c_{N}^{T})x_{N}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+subject to:
+\begin{align*}\!\begin{aligned}
+& I x_{B}+A_{B}^{-1}A_{N}x_{N} = A_{B}^{-1}b\\
+& x_{B}, x_{N} \geq 0\\
+\end{aligned}\end{align*}
+\sphinxAtStartPar
+Let’s ignore the sign constraints and let \(z\) be the objective value. We then have:
+\begin{align*}\!\begin{aligned}
+& z \quad + (c_{B}^{T}A_{B}^{-1}A_{N} - c_{N}^{T})x_{N} = c_{B}^{T}A_{B}^{-1}b\\
+& \quad I x_{B}+ \quad A_{B}^{-1}A_{N}x_{N} = A_{B}^{-1}b\\
+\end{aligned}\end{align*}
+\sphinxAtStartPar
+Therefore, given \sphinxstylestrong{any valid choice of B and N} (the index sets of basic and non\sphinxhyphen{}basic variables),
+we may use the following table to calculate the simplex tableau:
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|T|}
+\hline
+\sphinxstyletheadfamily 
+\sphinxAtStartPar
+0
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+\(c_{B}^{T}A_{B}^{-1}A_{N} - c_{N}^{T}\)
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+\(c_{B}^{T}A_{B}^{-1}b\)
+\\
+\hline
+\sphinxAtStartPar
+\(I\)
+&
+\sphinxAtStartPar
+\(A_{B}^{-1}A_{N}\)
+&
+\sphinxAtStartPar
+\(A_{B}^{-1}b\)
+\\
+\hline
+\sphinxAtStartPar
+basic
+&
+\sphinxAtStartPar
+non\sphinxhyphen{}basic
+&
+\sphinxAtStartPar
+RHS
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
+
+
+\section{Applications}
+\label{\detokenize{operationsResearch/LP:applications}}
+
+\chapter{Integer Programming}
+\label{\detokenize{operationsResearch/IP:integer-programming}}\label{\detokenize{operationsResearch/IP::doc}}
+\begin{sphinxShadowBox}
+\sphinxstyletopictitle{Contents}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/IP:id4}}{\hyperref[\detokenize{operationsResearch/IP:integer-programming}]{\sphinxcrossref{Integer Programming}}}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/IP:id5}}{\hyperref[\detokenize{operationsResearch/IP:ip-model}]{\sphinxcrossref{IP Model}}}
+
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/IP:id6}}{\hyperref[\detokenize{operationsResearch/IP:solution-methods}]{\sphinxcrossref{Solution Methods}}}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/IP:id7}}{\hyperref[\detokenize{operationsResearch/IP:the-branch-and-bound-algorithm}]{\sphinxcrossref{The Branch and Bound Algorithm}}}
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/IP:id8}}{\hyperref[\detokenize{operationsResearch/IP:applications}]{\sphinxcrossref{Applications}}}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/IP:id9}}{\hyperref[\detokenize{operationsResearch/IP:machine-scheduling-problem}]{\sphinxcrossref{Machine Scheduling Problem}}}
+
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/IP:id10}}{\hyperref[\detokenize{operationsResearch/IP:facility-location-problem}]{\sphinxcrossref{Facility Location Problem}}}
 
 \end{itemize}
 
@@ -130,20 +270,23 @@
 \end{sphinxShadowBox}
 
 
-\section{The Simplex Method}
-\label{\detokenize{operationsResearch/optimizationAlgorithms:the-simplex-method}}
+\section{IP Model}
+\label{\detokenize{operationsResearch/IP:ip-model}}
+\sphinxAtStartPar
+Hello World
 
-\section{The Branch and Bound Algorithm}
-\label{\detokenize{operationsResearch/optimizationAlgorithms:the-branch-and-bound-algorithm}}
 
-\section{Gradient Descent and Newton’s Method}
-\label{\detokenize{operationsResearch/optimizationAlgorithms:gradient-descent-and-newton-s-method}}
+\section{Solution Methods}
+\label{\detokenize{operationsResearch/IP:solution-methods}}
 
-\section{Examples}
-\label{\detokenize{operationsResearch/optimizationAlgorithms:examples}}
+\subsection{The Branch and Bound Algorithm}
+\label{\detokenize{operationsResearch/IP:the-branch-and-bound-algorithm}}
+
+\section{Applications}
+\label{\detokenize{operationsResearch/IP:applications}}
 
 \subsection{Machine Scheduling Problem}
-\label{\detokenize{operationsResearch/optimizationAlgorithms:machine-scheduling-problem}}
+\label{\detokenize{operationsResearch/IP:machine-scheduling-problem}}
 \sphinxAtStartPar
 Fifteen jobs, each with its processing time, should be scheduled on three machines.
 If two jobs cannot be scheduled on the same machine, they are called conflicting jobs.
@@ -156,7 +299,7 @@ Note that a job may have no conflicting jobs.
 \centering
 \sphinxcapstartof{table}
 \sphinxthecaptionisattop
-\sphinxcaption{Table 1: Data}\label{\detokenize{operationsResearch/optimizationAlgorithms:id1}}
+\sphinxcaption{Table 1: Data}\label{\detokenize{operationsResearch/IP:id1}}
 \sphinxaftertopcaption
 \begin{tabulary}{\linewidth}[t]{|T|T|T|}
 \hline
@@ -402,7 +545,7 @@ Decision variable \(w\) is a trivial positive value.
 
 
 \subsection{Facility Location Problem}
-\label{\detokenize{operationsResearch/optimizationAlgorithms:facility-location-problem}}
+\label{\detokenize{operationsResearch/IP:facility-location-problem}}
 \sphinxAtStartPar
 A city is divided into \(n\) districts. The time (in minutes) it takes an ambulance to travel from District \(i\) to
 District \(j\) is denoted as \(d_{ij}\). The population of District \(i\) (in thousands) is \(p_{i}\).
@@ -415,7 +558,7 @@ minutes to travel from District 2 to District 3, and there are 40,000 citizens.
 \centering
 \sphinxcapstartof{table}
 \sphinxthecaptionisattop
-\sphinxcaption{Table 2: distances}\label{\detokenize{operationsResearch/optimizationAlgorithms:id2}}
+\sphinxcaption{Table 2: distances}\label{\detokenize{operationsResearch/IP:id2}}
 \sphinxaftertopcaption
 \begin{tabulary}{\linewidth}[t]{|T|T|T|T|T|T|T|T|T|}
 \hline
@@ -681,7 +824,7 @@ District
 \centering
 \sphinxcapstartof{table}
 \sphinxthecaptionisattop
-\sphinxcaption{Table 3: District Population}\label{\detokenize{operationsResearch/optimizationAlgorithms:id3}}
+\sphinxcaption{Table 3: District Population}\label{\detokenize{operationsResearch/IP:id3}}
 \sphinxaftertopcaption
 \begin{tabulary}{\linewidth}[t]{|T|T|}
 \hline
@@ -841,6 +984,58 @@ Decision variable \(w\) is a trivial positive value.
 \PYG{n}{prob}\PYG{o}{.}\PYG{n}{solve}\PYG{p}{(}\PYG{n}{solver}\PYG{o}{=}\PYG{n}{cp}\PYG{o}{.}\PYG{n}{GUROBI}\PYG{p}{)}
 \end{sphinxVerbatim}
 
+
+\chapter{Nonlinear Programming}
+\label{\detokenize{operationsResearch/NLP:nonlinear-programming}}\label{\detokenize{operationsResearch/NLP::doc}}
+\begin{sphinxShadowBox}
+\sphinxstyletopictitle{Contents}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/NLP:id1}}{\hyperref[\detokenize{operationsResearch/NLP:nonlinear-programming}]{\sphinxcrossref{Nonlinear Programming}}}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/NLP:id2}}{\hyperref[\detokenize{operationsResearch/NLP:nlp-model}]{\sphinxcrossref{NLP Model}}}
+
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/NLP:id3}}{\hyperref[\detokenize{operationsResearch/NLP:solution-methods}]{\sphinxcrossref{Solution Methods}}}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/NLP:id4}}{\hyperref[\detokenize{operationsResearch/NLP:gradient-descent}]{\sphinxcrossref{Gradient Descent}}}
+
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/NLP:id5}}{\hyperref[\detokenize{operationsResearch/NLP:newton-s-method}]{\sphinxcrossref{Newton’s Method}}}
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+\phantomsection\label{\detokenize{operationsResearch/NLP:id6}}{\hyperref[\detokenize{operationsResearch/NLP:applications}]{\sphinxcrossref{Applications}}}
+
+\end{itemize}
+
+\end{itemize}
+\end{sphinxShadowBox}
+
+
+\section{NLP Model}
+\label{\detokenize{operationsResearch/NLP:nlp-model}}
+
+\section{Solution Methods}
+\label{\detokenize{operationsResearch/NLP:solution-methods}}
+
+\subsection{Gradient Descent}
+\label{\detokenize{operationsResearch/NLP:gradient-descent}}
+
+\subsection{Newton’s Method}
+\label{\detokenize{operationsResearch/NLP:newton-s-method}}
+
+\section{Applications}
+\label{\detokenize{operationsResearch/NLP:applications}}
 
 \chapter{Indices and tables}
 \label{\detokenize{index:indices-and-tables}}\begin{itemize}
