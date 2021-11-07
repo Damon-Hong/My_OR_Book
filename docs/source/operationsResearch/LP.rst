@@ -89,11 +89,6 @@ we may use the following table to calculate the simplex tableau:
     =========  =============================================  =============================
 
 
-**References:**
-
-`Operations Research Theory, Ling-Chiech Kung, National Taiwan University <https://www.coursera.org/learn/operations-research-theory/lecture/c2huQ/1-3-the-simplex-method-in-metrics>`_ 
-
-
 
 --------------
 Duality Theory
@@ -423,3 +418,6 @@ Applications
 ------------
 
 
+**References:**
+
+`Operations Research Theory, Ling-Chiech Kung, National Taiwan University <https://www.coursera.org/learn/operations-research-theory/lecture/c2huQ/1-3-the-simplex-method-in-metrics>`_ 
