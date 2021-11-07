@@ -226,69 +226,70 @@ In general, if the primal LP is in the standard form as:
 
 .. math:: 
 
-    \underset{x_1,x_2,x_3}{\text{Maximize }} c_1x_1 + c_2x_2 + c_3x_3 
+    \begin{aligned}  
+        & \underset{x_1,x_2,x_3}{\text{Maximize }} c_1x_1 + c_2x_2 + c_3x_3
 
-subject to: 
+        & \text{subject to:} 
 
-.. math:: 
+        & A_{1,1}x_1 + A_{1,2}x_2 + A_{1,3}x_3 = b_1 
 
-    A_{1,1}x_1 + A_{1,2}x_2 + A_{1,3}x_3 = b_1 
+        & A_{2,1}x_1 + A_{2,2}x_2 + A_{2,3}x_3 = b_2
 
-    A_{2,1}x_1 + A_{2,2}x_2 + A_{2,3}x_3 = b_2
+        & A_{3,1}x_1 + A_{3,2}x_2 + A_{3,3}x_3 = b_3 
 
-    A_{3,1}x_1 + A_{3,2}x_2 + A_{3,3}x_3 = b_3 
-
-    x_1 \geq 0, x_2 \geq 0, x_3 \geq 0 
-
+        & x_1 \geq 0, x_2 \geq 0, x_3 \geq 0 
+    \end{aligned}
+    
 
 The matrix representation is: 
 
 .. math:: 
+    :label: 1
 
-    \underset{x}{\text{Maximize }} c^{T}x
+    \begin{aligned}
+    & \underset{x}{\text{Maximize }} c^{T}x
 
-subject to: 
+    & \text{subject to:} 
 
-.. math:: 
+    & Ax = b
 
-    Ax = b
-
-    x \geq 0
+    & x \geq 0
+    \end{aligned}
 
 
 
 Then, its dual LP is: 
 
 .. math:: 
+    
+    \begin{aligned}
+    & \underset{y_1,y_2,y_3}{\text{Minimize }} b_1y_1 + b_2y_2 + b_3y_3
 
-    \underset{y_1,y_2,y_3}{\text{Minimize }} b_1y_1 + b_2y_2 + b_3y_3
+    & \text{subject to:} 
 
-subject to: 
+    & A_{1,1}y_1 + A_{2,1}y_2 + A_{3,1}y_3 \geq c_1 
 
-.. math:: 
+    & A_{1,2}y_1 + A_{2,2}y_2 + A_{3,2}y_3 \geq c_2
 
-    A_{1,1}y_1 + A_{2,1}y_2 + A_{3,1}y_3 = c_1 
+    & A_{1,3}y_1 + A_{2,3}y_2 + A_{3,3}y_3 \geq c_3 
 
-    A_{1,2}y_1 + A_{2,2}y_2 + A_{3,2}y_3 = c_2
-
-    A_{1,3}y_1 + A_{2,3}y_2 + A_{3,3}y_3 = c_3 
-
-    y_1, y_2, y_3 \text{ are urs} 
+    & y_1, y_2, y_3 \text{ are urs} 
+    \end{aligned}
 
 The matrix representation is: 
 
 .. math:: 
+    :label: 2
 
-    \underset{y}{\text{Minimize }} b^{T}y
+    \begin{aligned}
+    & \underset{y}{\text{Minimize }} b^{T}y
 
-subject to: 
+    & \text{subject to:} 
 
-.. math:: 
+    & A^{T}y \geq c
 
-    A^{T}y = c
-
-    y \text{ is urs}
-
+    & y \text{ is urs}
+    \end{aligned}
 
 
 .. note::
@@ -298,6 +299,118 @@ subject to:
 
 Duality Theorems
 ================
+
+Weak Duality
+------------
+
+.. note:: 
+
+    **Proposition 2 (Weak Duality):** For the LPs defined in :eq:`1`, if :math:`x` and :math:`y` are primal and dual feasible, then 
+    :math:`c^{T}x \leq b^{T}y`. 
+
+This is because dual problem provides an **upper bound** of the primal problem. 
+
+Sufficiency of Optimality
+-------------------------
+
+.. note:: 
+
+    **Proposition 3 (Sufficiency Condition for Optimality):** If :math:`\overline{x}` and :math:`\overline{y}` are primal and dual feasible, and :math:`c^{T}\overline{x} = b^{T}\overline{y}`, 
+    then :math:`\overline{x}` and :math:`\overline{y}` are primal and dual optimal. 
+
+**Proof:**
+
+For all dual feasible :math:`y`, we have :math:`c^{T}\overline{x} \leq b^{T}y` by weak duality. But we are given that :math:`c^{T}\overline{x} = b^{T}\overline{y}`, so we have 
+:math:`b^{T}\overline{y} = b^{T}y` for all dual feasible :math:`y`. This is telling us that :math:`\overline{y}` is dual optimal. For :math:`\overline{x}` is the same. 
+
+.. note::
+
+    Given a primal feasible solution :math:`\overline{x}`, if we can find a dual feasible solution so that there objective values are **identical**, then :math:`\overline{x}` is the optimal solution.
+
+
+The Dual Optimal Solution 
+-------------------------
+
+If we have solved the primal LP, the **dual optimal solution** is there. 
+
+.. note:: 
+
+    **Proposition 4 (Dual Optimal Solution):** For the LPs defined in :eq:`1` , if :math:`\overline{x}` is 
+    primal optimal with basis B, then :math:`\overline{y} = c_{B}^{T}A_{B}^{-1}` is dual optimal. 
+
+**Proof:**
+
+If :math:`\overline{x}` is primal optimal, then let's say :math:`\overline{y}` is the coresponding dual optimal, then
+:math:`c^{T}\overline{x} = b^{T}\overline{y}`. Because :math:`c^{T}\overline{x} = c^{T}_{B}A_{B}^{-1}b`, then 
+:math:`\overline{y} = c_{B}^{T}A_{B}^{-1}`.   
+
+.. note::
+
+    **Proposition 5 (Strong Duality):** For the LPs defined in :eq:`1`, :math:`\overline{x}` and :math:`\overline{y}` are primal 
+    and dual optimal if and only if :math:`\overline{x}` and :math:`\overline{y}` are primal and dual feasible and 
+    :math:`c^{T}\overline{x} = b^{T}\overline{y}`. 
+
+
+
+
+Complementary Slackness
+-----------------------
+
+Consider :math:`v`, the **slack variable** of the dual LP: 
+
+.. math:: 
+    :label: 3
+
+        \begin{aligned}
+        & \underset{y,v}{\text{minimize }} b^{T}y \\
+        & \text{subject to:} \\ 
+        & A^{T}y - v = c \\
+        & v \geq 0
+        \end{aligned}
+
+.. note::
+
+    **Proposition 6 (Complementary Slackness):** For the LPs defined in :eq:`1` and :eq:`3`, :math:`\overline{x}` and :math:`(\overline{y}, \overline{v})`
+    are primal and dual optimal if and only if they are feasible and :math:`\overline{v}^{T}\overline{x} = 0`. 
+
+
+**Proof:**
+
+We have :math:`c^{T}\overline{x} = (A^{T}\overline{y}-\overline{v})^{T}\overline{x} = (\overline{y}^{T}A - \overline{v}^{T})\overline{x}= \overline{y}^{T}A\overline{x} - \overline{v}^{T}\overline{x} = \overline{y}^{T}b - \overline{v}^{T}\overline{x} = b^{T}\overline{y} - \overline{v}^{T}\overline{x}`.
+Therefore, :math:`\overline{v}^{T}\overline{x} = 0` if and only if :math:`c^{T}\overline{x} = b^{T}\overline{y}`, that is  :math:`\overline{x}` and :math:`(\overline{y}, \overline{v})`
+are primal and dual optimal according to strong duality. 
+
+
+
+
+
+Shadow Prices
+-------------
+
+.. note:: 
+
+    **Definition 1 (Shadow Prices):** For an LP that has an optimal solution, the shadow price of a constraint is the amount of objective value increased when the RHS of 
+    that constraint is increased by 1, assuming the current optimal basis remains optimal. 
+
+- NOTE that we assume the current optimal basis (optimal basic variables of primal LP) does not change. 
+- If shifting a constraint does not affect the optimal solution, the shadow price must be **zero**. 
+- Not all binding constraints has nonzero shadow prices. 
+
+.. note:: 
+
+    **Proposition 8:** Shadow prices are *zero* for constraints that are *nonbinding* at the optimal solution. 
+
+.. note::
+
+    **Proposition 9:** For any LP, shadow prices equal the values of dual variables in the dual optimal solution. 
+
+
+**Proof:**
+
+Let B be the old optimal basis and :math:`z = c_{B}^{T}A_{B}^{-1}b` be the old objective value. If :math:`b_{1}` becomes :math:`b^{'} = b_1 +1`, then :math:`z` becomes: 
+:math:`z^{'} = z + (c_{B}^{T}A_{B}^{-1})_{1}`. So the shadow price of constraint 1 is :math:`z^{'} = z + (c_{B}^{T}A_{B}^{-1})_{1}`. In general, the shadow price of constraint 
+:math:`i` is :math:`z^{'} = z + (c_{B}^{T}A_{B}^{-1})_{i}`. As :math:`c_{B}^{T}A_{B}^{-1}` is the dual optimal solution, the proof is complete. 
+
 
 
 

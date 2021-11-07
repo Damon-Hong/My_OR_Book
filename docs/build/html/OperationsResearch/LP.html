@@ -51,7 +51,14 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#duality-theory">Duality Theory</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#primal-and-dual">Primal and Dual</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#duality-theorems">Duality Theorems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#duality-theorems">Duality Theorems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#weak-duality">Weak Duality</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sufficiency-of-optimality">Sufficiency of Optimality</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-dual-optimal-solution">The Dual Optimal Solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#complementary-slackness">Complementary Slackness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shadow-prices">Shadow Prices</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#applications">Applications</a></li>
@@ -105,10 +112,18 @@
 <li><p><a class="reference internal" href="#duality-theory" id="id6">Duality Theory</a></p>
 <ul>
 <li><p><a class="reference internal" href="#primal-and-dual" id="id7">Primal and Dual</a></p></li>
-<li><p><a class="reference internal" href="#duality-theorems" id="id8">Duality Theorems</a></p></li>
+<li><p><a class="reference internal" href="#duality-theorems" id="id8">Duality Theorems</a></p>
+<ul>
+<li><p><a class="reference internal" href="#weak-duality" id="id9">Weak Duality</a></p></li>
+<li><p><a class="reference internal" href="#sufficiency-of-optimality" id="id10">Sufficiency of Optimality</a></p></li>
+<li><p><a class="reference internal" href="#the-dual-optimal-solution" id="id11">The Dual Optimal Solution</a></p></li>
+<li><p><a class="reference internal" href="#complementary-slackness" id="id12">Complementary Slackness</a></p></li>
+<li><p><a class="reference internal" href="#shadow-prices" id="id13">Shadow Prices</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#applications" id="id9">Applications</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#applications" id="id14">Applications</a></p></li>
 </ul>
 </li>
 </ul>
@@ -241,28 +256,24 @@ Therefore, we can formulate an optimization problem as follows:</p>
 <p><strong>Standard form primal problem:</strong></p>
 <p>In general, if the primal LP is in the standard form as:</p>
 <div class="math notranslate nohighlight">
-\[\underset{x_1,x_2,x_3}{\text{Maximize }} c_1x_1 + c_2x_2 + c_3x_3\]</div>
-<p>subject to:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}A_{1,1}x_1 + A_{1,2}x_2 + A_{1,3}x_3 = b_1\\A_{2,1}x_1 + A_{2,2}x_2 + A_{2,3}x_3 = b_2\\A_{3,1}x_1 + A_{3,2}x_2 + A_{3,3}x_3 = b_3\\x_1 \geq 0, x_2 \geq 0, x_3 \geq 0\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}\begin{aligned}
+    &amp; \underset{x_1,x_2,x_3}{\text{Maximize }} c_1x_1 + c_2x_2 + c_3x_3\\    &amp; \text{subject to:}\\    &amp; A_{1,1}x_1 + A_{1,2}x_2 + A_{1,3}x_3 = b_1\\    &amp; A_{2,1}x_1 + A_{2,2}x_2 + A_{2,3}x_3 = b_2\\    &amp; A_{3,1}x_1 + A_{3,2}x_2 + A_{3,3}x_3 = b_3\\    &amp; x_1 \geq 0, x_2 \geq 0, x_3 \geq 0
+\end{aligned}\end{aligned}\end{align} \]</div>
 <p>The matrix representation is:</p>
-<div class="math notranslate nohighlight">
-\[\underset{x}{\text{Maximize }} c^{T}x\]</div>
-<p>subject to:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}Ax = b\\x \geq 0\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight" id="equation-1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-1" title="Permalink to this equation"></a></span>\[ \begin{align}\begin{aligned}\begin{aligned}
+&amp; \underset{x}{\text{Maximize }} c^{T}x\\&amp; \text{subject to:}\\&amp; Ax = b\\&amp; x \geq 0
+\end{aligned}\end{aligned}\end{align} \]</div>
 <p>Then, its dual LP is:</p>
 <div class="math notranslate nohighlight">
-\[\underset{y_1,y_2,y_3}{\text{Minimize }} b_1y_1 + b_2y_2 + b_3y_3\]</div>
-<p>subject to:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}A_{1,1}y_1 + A_{2,1}y_2 + A_{3,1}y_3 = c_1\\A_{1,2}y_1 + A_{2,2}y_2 + A_{3,2}y_3 = c_2\\A_{1,3}y_1 + A_{2,3}y_2 + A_{3,3}y_3 = c_3\\y_1, y_2, y_3 \text{ are urs}\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}\begin{aligned}
+&amp; \underset{y_1,y_2,y_3}{\text{Minimize }} b_1y_1 + b_2y_2 + b_3y_3\\&amp; \text{subject to:}\\&amp; A_{1,1}y_1 + A_{2,1}y_2 + A_{3,1}y_3 \geq c_1\\&amp; A_{1,2}y_1 + A_{2,2}y_2 + A_{3,2}y_3 \geq c_2\\&amp; A_{1,3}y_1 + A_{2,3}y_2 + A_{3,3}y_3 \geq c_3\\&amp; y_1, y_2, y_3 \text{ are urs}
+\end{aligned}\end{aligned}\end{align} \]</div>
 <p>The matrix representation is:</p>
-<div class="math notranslate nohighlight">
-\[\underset{y}{\text{Minimize }} b^{T}y\]</div>
-<p>subject to:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}A^{T}y = c\\y \text{ is urs}\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight" id="equation-2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-2" title="Permalink to this equation"></a></span>\[ \begin{align}\begin{aligned}\begin{aligned}
+&amp; \underset{y}{\text{Minimize }} b^{T}y\\&amp; \text{subject to:}\\&amp; A^{T}y \geq c\\&amp; y \text{ is urs}
+\end{aligned}\end{aligned}\end{align} \]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Proposition 1:</strong> For any primal LP, there is a unique dual, whose dual is the primal.</p>
@@ -270,10 +281,98 @@ Therefore, we can formulate an optimization problem as follows:</p>
 </section>
 <section id="duality-theorems">
 <h3><a class="toc-backref" href="#id8">Duality Theorems</a><a class="headerlink" href="#duality-theorems" title="Permalink to this headline"></a></h3>
+<section id="weak-duality">
+<h4><a class="toc-backref" href="#id9">Weak Duality</a><a class="headerlink" href="#weak-duality" title="Permalink to this headline"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Proposition 2 (Weak Duality):</strong> For the LPs defined in <a class="reference internal" href="#equation-1">(1)</a>, if <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are primal and dual feasible, then
+<span class="math notranslate nohighlight">\(c^{T}x \leq b^{T}y\)</span>.</p>
+</div>
+<p>This is because dual problem provides an <strong>upper bound</strong> of the primal problem.</p>
+</section>
+<section id="sufficiency-of-optimality">
+<h4><a class="toc-backref" href="#id10">Sufficiency of Optimality</a><a class="headerlink" href="#sufficiency-of-optimality" title="Permalink to this headline"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Proposition 3 (Sufficiency Condition for Optimality):</strong> If <span class="math notranslate nohighlight">\(\overline{x}\)</span> and <span class="math notranslate nohighlight">\(\overline{y}\)</span> are primal and dual feasible, and <span class="math notranslate nohighlight">\(c^{T}\overline{x} = b^{T}\overline{y}\)</span>,
+then <span class="math notranslate nohighlight">\(\overline{x}\)</span> and <span class="math notranslate nohighlight">\(\overline{y}\)</span> are primal and dual optimal.</p>
+</div>
+<p><strong>Proof:</strong></p>
+<p>For all dual feasible <span class="math notranslate nohighlight">\(y\)</span>, we have <span class="math notranslate nohighlight">\(c^{T}\overline{x} \leq b^{T}y\)</span> by weak duality. But we are given that <span class="math notranslate nohighlight">\(c^{T}\overline{x} = b^{T}\overline{y}\)</span>, so we have
+<span class="math notranslate nohighlight">\(b^{T}\overline{y} = b^{T}y\)</span> for all dual feasible <span class="math notranslate nohighlight">\(y\)</span>. This is telling us that <span class="math notranslate nohighlight">\(\overline{y}\)</span> is dual optimal. For <span class="math notranslate nohighlight">\(\overline{x}\)</span> is the same.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Given a primal feasible solution <span class="math notranslate nohighlight">\(\overline{x}\)</span>, if we can find a dual feasible solution so that there objective values are <strong>identical</strong>, then <span class="math notranslate nohighlight">\(\overline{x}\)</span> is the optimal solution.</p>
+</div>
+</section>
+<section id="the-dual-optimal-solution">
+<h4><a class="toc-backref" href="#id11">The Dual Optimal Solution</a><a class="headerlink" href="#the-dual-optimal-solution" title="Permalink to this headline"></a></h4>
+<p>If we have solved the primal LP, the <strong>dual optimal solution</strong> is there.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Proposition 4 (Dual Optimal Solution):</strong> For the LPs defined in <a class="reference internal" href="#equation-1">(1)</a> , if <span class="math notranslate nohighlight">\(\overline{x}\)</span> is
+primal optimal with basis B, then <span class="math notranslate nohighlight">\(\overline{y} = c_{B}^{T}A_{B}^{-1}\)</span> is dual optimal.</p>
+</div>
+<p><strong>Proof:</strong></p>
+<p>If <span class="math notranslate nohighlight">\(\overline{x}\)</span> is primal optimal, then let’s say <span class="math notranslate nohighlight">\(\overline{y}\)</span> is the coresponding dual optimal, then
+<span class="math notranslate nohighlight">\(c^{T}\overline{x} = b^{T}\overline{y}\)</span>. Because <span class="math notranslate nohighlight">\(c^{T}\overline{x} = c^{T}_{B}A_{B}^{-1}b\)</span>, then
+<span class="math notranslate nohighlight">\(\overline{y} = c_{B}^{T}A_{B}^{-1}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Proposition 5 (Strong Duality):</strong> For the LPs defined in <a class="reference internal" href="#equation-1">(1)</a>, <span class="math notranslate nohighlight">\(\overline{x}\)</span> and <span class="math notranslate nohighlight">\(\overline{y}\)</span> are primal
+and dual optimal if and only if <span class="math notranslate nohighlight">\(\overline{x}\)</span> and <span class="math notranslate nohighlight">\(\overline{y}\)</span> are primal and dual feasible and
+<span class="math notranslate nohighlight">\(c^{T}\overline{x} = b^{T}\overline{y}\)</span>.</p>
+</div>
+</section>
+<section id="complementary-slackness">
+<h4><a class="toc-backref" href="#id12">Complementary Slackness</a><a class="headerlink" href="#complementary-slackness" title="Permalink to this headline"></a></h4>
+<p>Consider <span class="math notranslate nohighlight">\(v\)</span>, the <strong>slack variable</strong> of the dual LP:</p>
+<div class="math notranslate nohighlight" id="equation-3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-3" title="Permalink to this equation"></a></span>\[\begin{split}    \begin{aligned}
+    &amp; \underset{y,v}{\text{minimize }} b^{T}y \\
+    &amp; \text{subject to:} \\
+    &amp; A^{T}y - v = c \\
+    &amp; v \geq 0
+    \end{aligned}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Proposition 6 (Complementary Slackness):</strong> For the LPs defined in <a class="reference internal" href="#equation-1">(1)</a> and <a class="reference internal" href="#equation-3">(3)</a>, <span class="math notranslate nohighlight">\(\overline{x}\)</span> and <span class="math notranslate nohighlight">\((\overline{y}, \overline{v})\)</span>
+are primal and dual optimal if and only if they are feasible and <span class="math notranslate nohighlight">\(\overline{v}^{T}\overline{x} = 0\)</span>.</p>
+</div>
+<p><strong>Proof:</strong></p>
+<p>We have <span class="math notranslate nohighlight">\(c^{T}\overline{x} = (A^{T}\overline{y}-\overline{v})^{T}\overline{x} = (\overline{y}^{T}A - \overline{v}^{T})\overline{x}= \overline{y}^{T}A\overline{x} - \overline{v}^{T}\overline{x} = \overline{y}^{T}b - \overline{v}^{T}\overline{x} = b^{T}\overline{y} - \overline{v}^{T}\overline{x}\)</span>.
+Therefore, <span class="math notranslate nohighlight">\(\overline{v}^{T}\overline{x} = 0\)</span> if and only if <span class="math notranslate nohighlight">\(c^{T}\overline{x} = b^{T}\overline{y}\)</span>, that is  <span class="math notranslate nohighlight">\(\overline{x}\)</span> and <span class="math notranslate nohighlight">\((\overline{y}, \overline{v})\)</span>
+are primal and dual optimal according to strong duality.</p>
+</section>
+<section id="shadow-prices">
+<h4><a class="toc-backref" href="#id13">Shadow Prices</a><a class="headerlink" href="#shadow-prices" title="Permalink to this headline"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Definition 1 (Shadow Prices):</strong> For an LP that has an optimal solution, the shadow price of a constraint is the amount of objective value increased when the RHS of
+that constraint is increased by 1, assuming the current optimal basis remains optimal.</p>
+</div>
+<ul class="simple">
+<li><p>NOTE that we assume the current optimal basis (optimal basic variables of primal LP) does not change.</p></li>
+<li><p>If shifting a constraint does not affect the optimal solution, the shadow price must be <strong>zero</strong>.</p></li>
+<li><p>Not all binding constraints has nonzero shadow prices.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Proposition 8:</strong> Shadow prices are <em>zero</em> for constraints that are <em>nonbinding</em> at the optimal solution.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Proposition 9:</strong> For any LP, shadow prices equal the values of dual variables in the dual optimal solution.</p>
+</div>
+<p><strong>Proof:</strong></p>
+<p>Let B be the old optimal basis and <span class="math notranslate nohighlight">\(z = c_{B}^{T}A_{B}^{-1}b\)</span> be the old objective value. If <span class="math notranslate nohighlight">\(b_{1}\)</span> becomes <span class="math notranslate nohighlight">\(b^{'} = b_1 +1\)</span>, then <span class="math notranslate nohighlight">\(z\)</span> becomes:
+<span class="math notranslate nohighlight">\(z^{'} = z + (c_{B}^{T}A_{B}^{-1})_{1}\)</span>. So the shadow price of constraint 1 is <span class="math notranslate nohighlight">\(z^{'} = z + (c_{B}^{T}A_{B}^{-1})_{1}\)</span>. In general, the shadow price of constraint
+<span class="math notranslate nohighlight">\(i\)</span> is <span class="math notranslate nohighlight">\(z^{'} = z + (c_{B}^{T}A_{B}^{-1})_{i}\)</span>. As <span class="math notranslate nohighlight">\(c_{B}^{T}A_{B}^{-1}\)</span> is the dual optimal solution, the proof is complete.</p>
+</section>
 </section>
 </section>
 <section id="applications">
-<h2><a class="toc-backref" href="#id9">Applications</a><a class="headerlink" href="#applications" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id14">Applications</a><a class="headerlink" href="#applications" title="Permalink to this headline"></a></h2>
 </section>
 </section>
 
