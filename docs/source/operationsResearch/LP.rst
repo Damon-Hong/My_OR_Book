@@ -407,9 +407,68 @@ Let B be the old optimal basis and :math:`z = c_{B}^{T}A_{B}^{-1}b` be the old o
 :math:`i` is :math:`z^{'} = z + (c_{B}^{T}A_{B}^{-1})_{i}`. As :math:`c_{B}^{T}A_{B}^{-1}` is the dual optimal solution, the proof is complete. 
 
 
+--------------------
+Sensitivity Analysis
+--------------------
+
+Add a new primal variable
+=========================
+
+Let's say our original problem is: 
+
+.. math:: 
+    :label: 4
+
+    \max_{x_1,x_2} 2x_1 + 3x_2 
+
+    \text{subject to:}
+
+    x_1 + x_2 \leq 4 \\
+    x_1 + 2x_2 \leq 6\\
+    x_1, x_2 \geq 0 
+
+Our new problem is: 
+
+.. math:: 
+
+    \max_{x_1,x_2} 2x_1 + 3x_2 + 8x_3
+
+    \text{subject to:}
+
+    x_1 + x_2 \leq 4 \\
+    x_1 + 2x_2 + x_3 \leq 6\\
+    x_1, x_2, x_3 \geq 0
+
+We don't need to do another simplex method from scratch. Instead, we continue apply existing tableau adding a new primal variable :math:`x_3`. 
+Recall that the vector of constraint coefficients for nonbasic variables is :math:`A_B^{-1}A_N`. For column :math:`j` (i.e., :math:`j = 3` in this case),
+the column is :math:`A_B^{-1}A_j`. In our example, it is 
+:math:`\begin{bmatrix} 2&-1\\-1&1 \end{bmatrix} \begin{bmatrix} 0\\1 \end{bmatrix} = \begin{bmatrix} -1\\1 \end{bmatrix}`. 
+
+Recall that the vector of reduced costs for nonbasic variables is :math:`c_B^{T}A_{B}^{-1}A_{N} - c_{N}^{T}`. For column :math:`j`, that value is 
+:math:`c_B^{T}A_{B}^{-1}A_{j} - c_{j}`. in our example, it is :math:`\begin{bmatrix} 2 & 3 \end{bmatrix} \begin{bmatrix} -1\\1 \end{bmatrix} - 8 = -7`. Then, we have created a 
+new tableau to continue and get new optimal solutions. 
 
 
+Add a new primal constraints
+============================ 
 
+For example, our another new problem is: 
+
+.. math:: 
+    :label: 5
+
+    \max_{x_1,x_2} 2x_1 + 3x_2 
+
+    \text{subject to:}
+
+    x_1 + x_2 \leq 4 \\
+    x_1 + 2x_2 \leq 6\\
+    x_1 \leq 1 \\
+    x_1, x_2 \geq 0 
+
+When we add a new constraint in our primal problem :eq:`4`, our corresponding dual variables increase by one. Therefore, we can then use the same idea from above to the 
+dual problem of :eq:`5`, or we can apply **dual simplex method** directly to the primal problem. 
+For more detail, please see `Sensitivity Analysis and Dual Simplex Method <https://www.coursera.org/learn/operations-research-theory/lecture/15082/3-0-opening>`_. 
 
 
 
@@ -420,4 +479,4 @@ Applications
 
 **References:**
 
-`Operations Research Theory, Ling-Chiech Kung, National Taiwan University <https://www.coursera.org/learn/operations-research-theory/lecture/c2huQ/1-3-the-simplex-method-in-metrics>`_ 
+`Operations Research Theory, Ling-Chiech Kung, National Taiwan University <https://www.coursera.org/learn/operations-research-theory/>`_ 
